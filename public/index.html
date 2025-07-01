@@ -1,0 +1,309 @@
+<!-- Copyright © 2025 Kamil Maslanka -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XAXACURRENCY - The Future of Anonymous Cryptocurrency</title>
+    <meta name="description" content="Experience the next generation of fully encrypted, anonymous digital currency. Built for privacy, security, and complete financial freedom." />
+    <meta name="author" content="Kamil Maslanka" />
+    <meta name="keywords" content="cryptocurrency, blockchain, privacy, anonymous, encryption, digital currency, XAXA" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="XAXACURRENCY - The Future of Anonymous Cryptocurrency" />
+    <meta property="og:description" content="Experience the next generation of fully encrypted, anonymous digital currency. Built for privacy, security, and complete financial freedom." />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="XAXACURRENCY - The Future of Anonymous Cryptocurrency" />
+    <meta property="twitter:description" content="Experience the next generation of fully encrypted, anonymous digital currency. Built for privacy, security, and complete financial freedom." />
+    
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'crypto-dark': '#0a0a0a',
+                        'crypto-blue': '#00d4ff',
+                        'crypto-purple': '#8b5cf6',
+                        'crypto-green': '#10b981'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- React and ReactDOM CDN -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script type="text/babel">
+        // Copyright © 2025 Kamil Maslanka
+        
+        const { useState, useEffect } = React;
+        
+        // Header Component
+        const Header = ({ onScrollTo }) => {
+            return (
+                <header className="fixed top-0 left-0 right-0 bg-crypto-dark/95 backdrop-blur-sm border-b border-crypto-blue/20 z-50">
+                    <div className="container mx-auto px-6 py-4">
+                        <div className="flex items-center justify-between">
+                            <div className="text-2xl font-bold text-crypto-blue">
+                                XAXACURRENCY
+                            </div>
+                            <nav className="hidden md:flex space-x-8">
+                                <button 
+                                    onClick={() => onScrollTo('home')}
+                                    className="text-white hover:text-crypto-blue transition-colors"
+                                >
+                                    Home
+                                </button>
+                                <button 
+                                    onClick={() => onScrollTo('features')}
+                                    className="text-white hover:text-crypto-blue transition-colors"
+                                >
+                                    Features
+                                </button>
+                                <button 
+                                    onClick={() => onScrollTo('technology')}
+                                    className="text-white hover:text-crypto-blue transition-colors"
+                                >
+                                    Technology
+                                </button>
+                                <button 
+                                    onClick={() => onScrollTo('contact')}
+                                    className="text-white hover:text-crypto-blue transition-colors"
+                                >
+                                    Contact
+                                </button>
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+            );
+        };
+        
+        // Hero Component
+        const Hero = ({ onScrollTo }) => {
+            return (
+                <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-crypto-dark via-gray-900 to-crypto-dark text-white">
+                    <div className="container mx-auto px-6 text-center">
+                        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-crypto-blue to-crypto-purple bg-clip-text text-transparent">
+                            XAXACURRENCY
+                        </h1>
+                        <p className="text-xl md:text-2xl mb-8 text-gray-300 max-w-3xl mx-auto">
+                            The Future of Anonymous Cryptocurrency
+                        </p>
+                        <p className="text-lg mb-12 text-gray-400 max-w-2xl mx-auto">
+                            Experience the next generation of fully encrypted, anonymous digital currency. 
+                            Built for privacy, security, and complete financial freedom.
+                        </p>
+                        <div className="flex flex-col md:flex-row gap-4 justify-center">
+                            <button 
+                                onClick={() => onScrollTo('features')}
+                                className="bg-crypto-blue hover:bg-crypto-blue/80 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+                            >
+                                Explore Features
+                            </button>
+                            <button 
+                                onClick={() => onScrollTo('technology')}
+                                className="border-2 border-crypto-blue text-crypto-blue hover:bg-crypto-blue hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+                            >
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // Features Component
+        const Features = () => {
+            const features = [
+                {
+                    title: "Complete Anonymity",
+                    description: "Advanced cryptographic techniques ensure your transactions remain completely private and untraceable.",
+                    icon: "🔒"
+                },
+                {
+                    title: "Quantum Resistance",
+                    description: "Built with quantum-resistant algorithms to secure your assets against future computing threats.",
+                    icon: "⚛️"
+                },
+                {
+                    title: "Lightning Fast",
+                    description: "Process transactions in seconds with our innovative consensus mechanism and optimized network.",
+                    icon: "⚡"
+                },
+                {
+                    title: "Decentralized",
+                    description: "Truly decentralized network with no central authority or control points.",
+                    icon: "🌐"
+                }
+            ];
+            
+            return (
+                <section id="features" className="py-20 bg-gray-900">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-4xl font-bold text-center mb-16 text-white">
+                            Revolutionary Features
+                        </h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                            {features.map((feature, index) => (
+                                <div key={index} className="bg-crypto-dark p-6 rounded-lg border border-crypto-blue/20 hover:border-crypto-blue/50 transition-colors">
+                                    <div className="text-4xl mb-4">{feature.icon}</div>
+                                    <h3 className="text-xl font-semibold mb-3 text-crypto-blue">{feature.title}</h3>
+                                    <p className="text-gray-300">{feature.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // Technology Component
+        const Technology = () => {
+            return (
+                <section id="technology" className="py-20 bg-crypto-dark">
+                    <div className="container mx-auto px-6">
+                        <h2 className="text-4xl font-bold text-center mb-16 text-white">
+                            Advanced Technology
+                        </h2>
+                        <div className="max-w-4xl mx-auto">
+                            <div className="grid md:grid-cols-2 gap-12">
+                                <div>
+                                    <h3 className="text-2xl font-semibold mb-4 text-crypto-blue">Blockchain Innovation</h3>
+                                    <p className="text-gray-300 mb-6">
+                                        Our proprietary blockchain technology combines the best of proof-of-stake 
+                                        and proof-of-work mechanisms to create a truly secure and efficient network.
+                                    </p>
+                                    <ul className="space-y-2 text-gray-400">
+                                        <li>• Zero-knowledge proofs</li>
+                                        <li>• Ring signatures</li>
+                                        <li>• Stealth addresses</li>
+                                        <li>• Confidential transactions</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 className="text-2xl font-semibold mb-4 text-crypto-purple">Security First</h3>
+                                    <p className="text-gray-300 mb-6">
+                                        Built with military-grade encryption and multiple layers of security 
+                                        to protect your digital assets from any potential threats.
+                                    </p>
+                                    <ul className="space-y-2 text-gray-400">
+                                        <li>• Multi-signature wallets</li>
+                                        <li>• Hardware security modules</li>
+                                        <li>• Biometric authentication</li>
+                                        <li>• Cold storage integration</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // Contact Component
+        const Contact = () => {
+            return (
+                <section id="contact" className="py-20 bg-gray-900">
+                    <div className="container mx-auto px-6 text-center">
+                        <h2 className="text-4xl font-bold mb-8 text-white">Get in Touch</h2>
+                        <p className="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                            Ready to experience the future of anonymous cryptocurrency? 
+                            Join our community and stay updated on the latest developments.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button className="bg-crypto-blue hover:bg-crypto-blue/80 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                                Join Community
+                            </button>
+                            <button className="border-2 border-crypto-purple text-crypto-purple hover:bg-crypto-purple hover:text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                                Download Whitepaper
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            );
+        };
+        
+        // Footer Component
+        const Footer = () => {
+            return (
+                <footer className="bg-crypto-dark border-t border-crypto-blue/20 py-8">
+                    <div className="container mx-auto px-6 text-center">
+                        <div className="text-2xl font-bold text-crypto-blue mb-4">XAXACURRENCY</div>
+                        <p className="text-gray-400 mb-4">
+                            The future of anonymous cryptocurrency is here.
+                        </p>
+                        <p className="text-gray-500 text-sm">
+                            Copyright © 2025 Kamil Maslanka. All rights reserved.
+                        </p>
+                    </div>
+                </footer>
+            );
+        };
+        
+        // Main App Component
+        const App = () => {
+            const [currentSection, setCurrentSection] = useState('home');
+            
+            const scrollToSection = (sectionId) => {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                    setCurrentSection(sectionId);
+                }
+            };
+            
+            useEffect(() => {
+                const handleScroll = () => {
+                    const sections = ['home', 'features', 'technology', 'contact'];
+                    const scrollPosition = window.scrollY + 200;
+                    
+                    for (const section of sections) {
+                        const element = document.getElementById(section);
+                        if (element) {
+                            const { offsetTop, offsetHeight } = element;
+                            if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                                setCurrentSection(section);
+                                break;
+                            }
+                        }
+                    }
+                };
+                
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
+            }, []);
+            
+            return (
+                <div className="min-h-screen bg-crypto-dark text-white">
+                    <Header onScrollTo={scrollToSection} />
+                    <Hero onScrollTo={scrollToSection} />
+                    <Features />
+                    <Technology />
+                    <Contact />
+                    <Footer />
+                </div>
+            );
+        };
+        
+        // Render the App
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>
